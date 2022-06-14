@@ -57,7 +57,7 @@ export const OneBoxImageOfTwoBoxes = () => {
 
         .card-title {
           margin: 0;
-          font-size: 1.25rem;
+          font: var(--headline5);
           text-align: center;
         }
 

@@ -1,8 +1,12 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { ThemeWrapper } from '../src/components/ThemeWrapper';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeWrapper>
+      <Component {...pageProps} />
+    </ThemeWrapper>
+  );
 }
 
-export default MyApp
+export default MyApp;
