@@ -2,9 +2,15 @@ import React, { FC } from 'react';
 
 export type YouTubeVideoProps = {
   embedId: string;
+  mobileRatio: number;
+  desktopRatio: number;
 };
 
-export const YoutubeVideo: FC<YouTubeVideoProps> = ({ embedId }) => {
+export const YoutubeVideo: FC<YouTubeVideoProps> = ({
+  embedId,
+  mobileRatio,
+  desktopRatio,
+}) => {
   return (
     <>
       <div className="youtube">
@@ -24,7 +30,7 @@ export const YoutubeVideo: FC<YouTubeVideoProps> = ({ embedId }) => {
       <style jsx>{`
         .youtube {
           position: relative;
-          aspect-ratio: 5/4;
+          aspect-ratio: ${mobileRatio};
         }
 
         .youtube iframe {
@@ -38,7 +44,7 @@ export const YoutubeVideo: FC<YouTubeVideoProps> = ({ embedId }) => {
 
         @media (min-width: 768px) {
           .youtube {
-            aspect-ratio: 16/9;
+            aspect-ratio: ${desktopRatio};
           }
         }
       `}</style>
