@@ -8,12 +8,22 @@ export default {
   component: YoutubeVideo,
 } as ComponentMeta<typeof YoutubeVideo>;
 
-const Template: ComponentStory<typeof YoutubeVideo> = ({ embedId }) => (
-  <YoutubeVideo embedId={embedId} mobileRatio={1} desktopRatio={1.77} />
+const Template: ComponentStory<typeof YoutubeVideo> = ({
+  embedId,
+  mobileRatio,
+  desktopRatio,
+}) => (
+  <YoutubeVideo
+    embedId={embedId}
+    mobileRatio={mobileRatio}
+    desktopRatio={desktopRatio}
+  />
 );
 
 export const YoutubeVideoHistory = Template.bind({});
 
 YoutubeVideoHistory.args = {
   embedId: 'NgkYH97Z3nk',
+  mobileRatio: 1,
+  desktopRatio: 1.77,
 };
