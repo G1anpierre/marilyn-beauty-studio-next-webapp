@@ -67,6 +67,7 @@ export const DesktopNav: FC<DesktopNavProps> = ({ sections }) => {
           </div>
         </nav>
       </div>
+      <div className="line" />
       <div className="desktop-nav-subsections" ref={ref}>
         {selectedSection && (
           <Subsections subsections={selectedSection.subsections} />
@@ -90,6 +91,10 @@ export const DesktopNav: FC<DesktopNavProps> = ({ sections }) => {
           .wrapper {
             max-width: 1200px;
             margin: auto;
+          }
+
+          .line {
+            box-shadow: 0 0.0625rem 0.3125rem 1px rgb(0 0 0 / 7%);
           }
 
           .desktop-nav-subsections {
