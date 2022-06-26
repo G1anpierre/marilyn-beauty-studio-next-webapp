@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { MobileNav } from './MobileNav';
+import { DesktopNav } from './DesktopNav';
 
-const Navbar = () => {
+type NavbarProps = {
+  desktopNav: any;
+  mobileNav: any;
+};
+
+const Navbar: FC<NavbarProps> = ({ desktopNav, mobileNav }) => {
   return (
     <>
-      <div className="container">Navbar</div>
+      <div className="container">
+        <MobileNav />
+        <DesktopNav sections={desktopNav.sections} />
+      </div>
       <style jsx>
         {`
           .container {
