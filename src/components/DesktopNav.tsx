@@ -2,6 +2,7 @@ import React, { FC, useRef, useState } from 'react';
 import { Button } from './Button';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import { Subsections } from './Subsections';
+import Link from 'next/link';
 
 type ItemType = {
   name: string;
@@ -46,8 +47,16 @@ export const DesktopNav: FC<DesktopNavProps> = ({ sections }) => {
           <div className="logo-desktop">Logo</div>
           <div className="desktop-nav-top">
             <div className="desktop-nav-elements">
-              <span>Search</span>
-              <span>Find Restaurant</span>
+              <span>
+                <Link href="/search">
+                  <a className="search-link">Search</a>
+                </Link>
+              </span>
+              <span>
+                <Link href="/findMap">
+                  <a className="find-link">Find Marilyn Beauty Studio</a>
+                </Link>
+              </span>
               <span>
                 <Button label="Bestil McDelivery" primary />
               </span>
@@ -77,6 +86,11 @@ export const DesktopNav: FC<DesktopNavProps> = ({ sections }) => {
         .desktop-nav,
         .desktop-nav-subsections {
           display: none;
+        }
+
+        .search-link,
+        .find-link {
+          all: unset; /* no underline */
         }
 
         @media (min-width: 768px) {
