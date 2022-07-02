@@ -17,6 +17,10 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          {/* favicon */}
+          {/* Webfont */}
+          {/* stylesheet */}
+          {/* script/js */}
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap"
             rel="stylesheet"

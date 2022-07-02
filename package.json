@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "debug": "NODE_OPTIONS='--inspect' next",
     "lint": "next lint",
     "linting": "eslint --ext .ts,.tsx",
     "storybook": "start-storybook -p 6006",

@@ -66,7 +66,7 @@ export const DesktopNav: FC<DesktopNavProps> = ({ sections }) => {
             {sections.map((section, index) => (
               <div key={index}>
                 <span
-                  onClick={() => handleSection(section.title)}
+                  onMouseEnter={() => handleSection(section.title)}
                   className="section-title"
                 >
                   {section.title}
@@ -77,7 +77,11 @@ export const DesktopNav: FC<DesktopNavProps> = ({ sections }) => {
         </nav>
       </div>
       <div className="line" />
-      <div className="desktop-nav-subsections" ref={ref}>
+      <div
+        className="desktop-nav-subsections"
+        ref={ref}
+        onMouseLeave={() => setSectionState('none')}
+      >
         {selectedSection && (
           <Subsections subsections={selectedSection.subsections} />
         )}
@@ -113,6 +117,9 @@ export const DesktopNav: FC<DesktopNavProps> = ({ sections }) => {
 
           .desktop-nav-subsections {
             display: block;
+            position: absolute;
+            inset-inline-start: 0;
+            inset-inline-end: 0;
           }
 
           .logo-desktop {

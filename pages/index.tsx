@@ -7,16 +7,11 @@ export type HomePageData = {
   };
 };
 
-const Home = ({
-  homepage: {
-    navbar: { desktopNav, mobileNav },
-  },
-}: HomePageData) => {
+const Home = ({ title }: any) => {
+  console.log('title : ', title);
   return (
     <>
-      <div className="container">
-        <Navbar desktopNav={desktopNav} mobileNav={mobileNav} />
-      </div>
+      <div className="container"></div>
       <style jsx>{``}</style>
     </>
   );
@@ -26,7 +21,7 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   console.log('context :', context);
-  const res = await fetch('http://localhost:3000/api/home');
+  const res = await fetch('http://localhost:3001/api/home');
   const homepage = await res.json();
 
   return {
