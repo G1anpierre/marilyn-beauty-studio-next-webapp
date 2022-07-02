@@ -22,7 +22,7 @@ type SectionType = {
   subsections: SubsectionType[];
 };
 
-type DesktopNavProps = {
+export type DesktopNavProps = {
   sections: SectionType[];
 };
 

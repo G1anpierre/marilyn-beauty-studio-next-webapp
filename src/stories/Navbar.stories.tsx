@@ -3,7 +3,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Navbar from '../components/Navbar';
+import { Navbar } from '../components/Navbar';
 
 export default {
   title: 'Components/Navbar',

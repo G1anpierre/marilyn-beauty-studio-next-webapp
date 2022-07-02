@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { MobileNav } from './MobileNav';
-import { DesktopNav } from './DesktopNav';
+import { DesktopNav, DesktopNavProps } from './DesktopNav';
 
-type NavbarProps = {
-  desktopNav: any;
+export type NavbarProps = {
+  desktopNav: DesktopNavProps;
   mobileNav: any;
 };
 
-const Navbar: FC<NavbarProps> = ({ desktopNav, mobileNav }) => {
+export const Navbar: FC<NavbarProps> = ({ desktopNav, mobileNav }) => {
   return (
     <>
       <div className="container">
@@ -25,5 +25,3 @@ const Navbar: FC<NavbarProps> = ({ desktopNav, mobileNav }) => {
     </>
   );
 };
-
-export default Navbar;
