@@ -1,5 +1,6 @@
 import type { GetStaticProps } from 'next';
 import { Navbar, NavbarProps } from '../src/components/Navbar';
+import { server } from '../config';
 
 export type HomePageData = {
   homepage: {
@@ -8,10 +9,9 @@ export type HomePageData = {
 };
 
 const Home = ({ title }: any) => {
-  console.log('title : ', title);
   return (
     <>
-      <div className="container"></div>
+      <div className="container">{title}</div>
       <style jsx>{``}</style>
     </>
   );
@@ -20,8 +20,7 @@ const Home = ({ title }: any) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  console.log('context :', context);
-  const res = await fetch('http://localhost:3001/api/home');
+  const res = await fetch(`${server}/api/home`);
   const homepage = await res.json();
 
   return {

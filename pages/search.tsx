@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import React from 'react';
+import { server } from '../config';
 
 const Search = () => {
   return <div>search</div>;
@@ -8,7 +9,7 @@ const Search = () => {
 export default Search;
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const res = await fetch('http://localhost:3001/api/home');
+  const res = await fetch(`${server}/api/home`);
   const homepage = await res.json();
 
   return {

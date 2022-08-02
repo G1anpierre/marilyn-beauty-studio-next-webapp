@@ -8,10 +8,7 @@ type Data = {
   };
 };
 
-export default function homePage(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
+function homePage(req: NextApiRequest, res: NextApiResponse<Data>) {
   res.statusCode = 200;
   res.setHeader('Content-type', 'application/json');
   res.end(
@@ -109,3 +106,5 @@ export default function homePage(
     })
   );
 }
+
+export default homePage;
